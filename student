@@ -1,0 +1,29 @@
+#include <iostream>
+
+class Student {
+public:
+    std::string name; // Public
+
+    // Constructor
+    Student(std::string studentName, int studentId) : name(studentName), id(studentId) {}
+
+    // Getter for private id
+    int getId() const { return id; }
+
+private:
+    int id; // Private
+};
+
+int main() {
+    // Creating a Student object
+    Student student("Alice", 12345);
+
+    // Directly modifying the public name
+    student.name = "Bob"; 
+
+    // Accessing private id via getter function
+    std::cout << "Student Name: " << student.name << "\n";
+    std::cout << "Student ID: " << student.getId() << "\n";
+
+    return 0;
+}
